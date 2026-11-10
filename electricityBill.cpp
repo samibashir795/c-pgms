@@ -1,0 +1,30 @@
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    float units, bill, surcharge;
+
+    cout << "Enter electricity units consumed: ";
+    cin >> units;
+
+    if (units <= 100) {
+        bill = units * 1.5;
+    }
+    else if (units <= 200) {
+        bill = (100 * 1.5) + (units - 100) * 2.5;
+    }
+    else {
+        bill = (100 * 1.5) + (100 * 2.5)
+               + (units - 200) * 4.0;
+    }
+
+    if (bill > 500) {
+        surcharge = bill * 0.10;
+        bill = bill + surcharge;
+    }
+
+    cout << "Total Electricity Bill = Rs. " << bill;
+
+    return 0;
+}
