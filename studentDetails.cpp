@@ -1,0 +1,53 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student
+{
+    string name;
+    int rollNo;
+    int marks1, marks2, marks3;
+
+public:
+    void input()
+    {
+        cout << "Enter student name: ";
+        getline(cin, name);
+
+        cout << "Enter roll number: ";
+        cin >> rollNo;
+
+        cout << "Enter marks in three subjects: ";
+        cin >> marks1 >> marks2 >> marks3;
+    }
+
+    int total()
+    {
+        return marks1 + marks2 + marks3;
+    }
+
+    double average()
+    {
+        return total() / 3.0;
+    }
+
+    void display()
+    {
+        cout << "\nStudent Details" << endl;
+        cout << "Name: " << name << endl;
+        cout << "Roll Number: " << rollNo << endl;
+        cout << "Total Marks: " << total() << endl;
+        cout << "Average Marks: " << average() << endl;
+    }
+};
+
+int main()
+{
+    Student s;
+
+    s.input();
+    s.display();
+
+    return 0;
+}
